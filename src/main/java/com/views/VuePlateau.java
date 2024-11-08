@@ -38,20 +38,10 @@ public class VuePlateau extends GridPane implements Observateur {
                 rect.setFill(Color.color(Math.random(), Math.random(), Math.random()));
                 rect.setStroke(Color.BLACK);
 
-                if (i == 1 || i == 3)
-                {
-                    rect.setFill(Color.GREEN);
-                }
-                else
-                {
-                    rect.setFill(Color.RED);
-                    rect.setStroke(Color.BLACK);
-                }
-
                 AnchorPane pane = new AnchorPane();
                 pane.getChildren().addAll(rect, text);
 
-                this.add(pane, i, j, 1, 1);
+                this.add(pane, j, i, 1, 1);
 
                 anchorPanes[4*i + j] = pane;
 
@@ -72,6 +62,13 @@ public class VuePlateau extends GridPane implements Observateur {
                 for (Node node : pane.getChildren()) {
                     if (node instanceof Text txt) {
                         txt.setText(String.valueOf(cases[i][j]));
+                    }
+                    if (node instanceof Rectangle rect) {
+                        if (cases[i][j] == 0) {
+                            rect.setFill(Color.WHITE);
+                        } else {
+                            rect.setFill(Color.RED);
+                        }
                     }
                 }
             }
