@@ -1,5 +1,6 @@
 package com.views;
 
+import com.Colors;
 import com.interfaces.Observateur;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
@@ -12,6 +13,18 @@ import javafx.scene.text.Text;
 public class VuePlateau extends GridPane implements Observateur {
 
     AnchorPane[] anchorPanes;
+    Colors colors;
+    Color color2 = Color.web("85fd8a");
+    Color color4 = Color.web("77fd7d");
+    Color color8 = Color.web("6be471");
+    Color color16 = Color.web("5fca64");
+    Color color32 = Color.web("53b158");
+    Color color64 = Color.web("47984b");
+    Color color128 = Color.web("3c7f3f");
+    Color color256 = Color.web("306532");
+    Color color512 = Color.web("244c25");
+    Color color1024 = Color.web("183319");
+    Color color2048 = Color.web("0c190c");
 
     public VuePlateau() {
         this.setHgap(5);
@@ -19,6 +32,7 @@ public class VuePlateau extends GridPane implements Observateur {
         // Label testLabel = new Label("This is the Vue Plateau!");
         // this.getChildren().addAll(square);
         createSquares();
+        colors = new Colors();
     }
 
     public void createSquares() {
@@ -64,11 +78,7 @@ public class VuePlateau extends GridPane implements Observateur {
                         txt.setText(String.valueOf(cases[i][j]));
                     }
                     if (node instanceof Rectangle rect) {
-                        if (cases[i][j] == 0) {
-                            rect.setFill(Color.WHITE);
-                        } else {
-                            rect.setFill(Color.RED);
-                        }
+                        rect.setFill(colors.getColor(cases[i][j]));
                     }
                 }
             }

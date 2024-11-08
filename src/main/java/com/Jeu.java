@@ -46,18 +46,19 @@ public class Jeu extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-/*
         scene.addEventHandler(KeyEvent.KEY_PRESSED, (event) -> {
             cases = handler.handle(event, cases);
         });
- */
+
         // Set up the game loop using AnimationTimer
         AnimationTimer gameLoop = new AnimationTimer() {
             @Override
             public void handle(long now) {
+                /*
                 scene.addEventHandler(KeyEvent.KEY_PRESSED, (event) -> {
                     cases = handler.handle(event, cases);
                 });
+                 */
                 observateur.reagir(cases);
             }
         };
