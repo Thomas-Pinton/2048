@@ -1,25 +1,30 @@
 package com.views;
 
 import com.interfaces.Observateur;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
-public class VueMenu implements Observateur {
+public class VueMenu extends GridPane implements Observateur {
     
-    private GridPane grid;
+    private Label label;
 
-    public void create() {
-        grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
+    public VueMenu() {
+        this.setHgap(10);
+        this.setVgap(10);
+        label = new Label("Games won / played: 2 / 5");
+
+        this.add(label, 0, 0);
     }
 
-    public void reagir(int[][] cases) {
-        System.out.println("Vue Menu is reacting");
+    public void reagir(int[][] cases, int[] games)
+    {
+        label.setText("Games won / played: " + games[0] + " / " + games[1]);
     }
 
     public Pane getPane() {
-        return grid;
+        return this;
     }
 
 }
