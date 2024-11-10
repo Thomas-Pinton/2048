@@ -20,6 +20,11 @@ public class Colors {
         colors[11] = Color.web("0c190c");
     }
     public Color getColor(int value) {
-        return colors[(int)Math.sqrt(value)];
+        int result = 0;
+        while (value > 1) {
+            value >>= 1;
+            result++;
+        }
+        return colors[result];
     }
 }

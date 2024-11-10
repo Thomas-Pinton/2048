@@ -1,21 +1,16 @@
 package com.views;
 
 import com.interfaces.Observateur;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
-public class VueMenu extends GridPane implements Observateur {
+public class VueStats extends Pane implements Observateur {
     
     private Label label;
 
-    public VueMenu() {
-        this.setHgap(10);
-        this.setVgap(10);
+    public VueStats() {
         label = new Label("Games won / played: 2 / 5");
-
-        this.add(label, 0, 0);
+        this.getChildren().add(label);
     }
 
     public void reagir(int[][] cases, int[] games)

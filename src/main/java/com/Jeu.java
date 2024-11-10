@@ -1,12 +1,11 @@
 package com;
 
 import com.interfaces.Observateur;
-import com.views.VueMenu;
+import com.views.VueStats;
 import com.views.VuePlateau;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -40,8 +39,8 @@ public class Jeu extends Application {
         VuePlateau vuePlateau = new VuePlateau();
         ajouterObservateur(vuePlateau);
 
-        VueMenu vueMenu = new VueMenu();
-        ajouterObservateur(vueMenu);
+        VueStats vueStats = new VueStats();
+        ajouterObservateur(vueStats);
 
         handler = new Handler();
 

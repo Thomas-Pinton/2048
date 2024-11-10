@@ -56,7 +56,6 @@ public class VuePlateau extends GridPane implements Observateur {
 
     public void reagir(int[][] cases, int[] games) {
         // update the squares values
-        System.out.println("Vue Plateau is reacting");
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 AnchorPane pane = anchorPanes[4*i + j];
